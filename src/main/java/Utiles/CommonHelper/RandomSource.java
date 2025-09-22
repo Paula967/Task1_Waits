@@ -1,8 +1,10 @@
 package Utiles.CommonHelper;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.PhoneNumber;
 
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 public class RandomSource {
@@ -46,7 +48,24 @@ public class RandomSource {
         String remainingDigits = faker.number().digits(8);
 
         return prefix + remainingDigits;
+
     }
+    public static String createDay() {
+        Date date = faker.date().birthday();
+        return new SimpleDateFormat("dd").format(date);
+    }
+
+    public static String createMonth() {
+        Date date = faker.date().birthday();
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMM");
+        return sdf.format(date);
+    }
+
+    public static String createYear() {
+        Date date = faker.date().birthday();
+        return new SimpleDateFormat("yyyy").format(date);
+    }
+
 
 
 }

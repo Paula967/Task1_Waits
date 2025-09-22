@@ -1,5 +1,6 @@
 import Pages.HomePage;
 import Pages.SignupPage;
+import Utiles.CommonHelper.Global;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -16,13 +17,22 @@ public class SignUpTest extends BaseTest{
     @Test(testName = "Signup", groups = "regression",priority =1)
     public  void signupHappyPathFlow (){
         Home.clickOnSignInUpButton();
-        SignupPage signupPage1=signupPage.enterName("Ahmed").EnterEmail("Atos@gmail").clickOnSignupBtn()
+        SignupPage signupPage1=signupPage.enterName(Global.fullName)
+                .EnterEmail(Global.email)
+                .clickOnSignupBtn()
                 .chooseGender()
-                .enterPassword("P@ssw0rd")
-                .chooseDay("6").chooseMonth("March").chooseYear("2003")
-                .enterFirstName("Mo").enterLastName("Mo")
-                .enterAddress("Address").chooseCountry("India").enterState("state").enterCity("city")
-                .enterZipCode("+20").enterMobileNumber("0100")
+                .enterPassword(Global.password)
+                .chooseDay(Global.birthDay)
+                .chooseMonth(Global.birthMonth)
+                .chooseYear(Global.birthYear)
+                .enterFirstName(Global.firstName)
+                .enterLastName(Global.lastName)
+                .enterAddress(Global.address)
+                .chooseCountry("India")
+                .enterState(Global.state)
+                .enterCity(Global.city)
+                .enterZipCode(Global.zipCode)
+                .enterMobileNumber(Global.phoneNumber)
                 .clickOnCreateAccountBtn();
     }
 
