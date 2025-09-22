@@ -1,5 +1,6 @@
 package Pages;
 
+import Utiles.CommonHelper.ElementHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -34,7 +35,7 @@ public class SignupPage {
     }
 
     public SignupPage enterName(String name){
-        driver.findElement(Name).sendKeys(name);
+        ElementHelper.type(driver,Name,name);
         return  this;
     }
     public  SignupPage EnterEmail(String email){
