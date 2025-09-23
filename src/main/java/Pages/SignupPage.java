@@ -4,12 +4,13 @@ import Utiles.CommonHelper.ElementHelper;
 import Utiles.CommonHelper.Global;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
+import DriverManager.DriverManager;
 
 public class SignupPage {
 
     //Variables
     WebDriver driver;
+    Global global;
 
     //Locators
     private final By Name=By.cssSelector("input[data-qa='signup-name']");
@@ -31,17 +32,18 @@ public class SignupPage {
     private final By createAccountBtn =By.cssSelector("button[data-qa='create-account']");
 
     //Constructor
-    public SignupPage(WebDriver driver) {
-        this.driver = driver;
+    public SignupPage() {
+        this.driver = DriverManager.getDriver();
+        global=Global.getInstance();
     }
 
     public SignupPage enterName(){
-        ElementHelper.type(driver,Name, Global.fullName);
-        return  this;
+        ElementHelper.type(driver,this.Name,global.getFullName());
+        return this;
     }
     public SignupPage EnterEmail(){
-        ElementHelper.type(driver,registerEmail,Global.email);
-        return  this;
+        ElementHelper.type(driver,registerEmail,global.getEmail());
+        return this;
     }
     public SignupPage clickOnSignupBtn (){
         ElementHelper.clickOnElement(driver,signUpButton);
@@ -52,31 +54,31 @@ public class SignupPage {
         return this;
     }
     public SignupPage enterPassword(){
-        ElementHelper.type(driver,password,Global.password);
+        ElementHelper.type(driver,password,global.getPassword());
         return this;
     }
     public  SignupPage chooseDay(){
-        ElementHelper.selectFromDropDownByText(driver,daysDropDown,Global.birthDay);
+        ElementHelper.selectFromDropDownByText(driver,daysDropDown,global.getBirthDay());
         return this;
     }
     public  SignupPage chooseMonth(){
-        ElementHelper.selectFromDropDownByText(driver,monthsDropDown,Global.birthMonth);
+        ElementHelper.selectFromDropDownByText(driver,monthsDropDown,global.getBirthMonth());
         return this;
     }
     public  SignupPage chooseYear(){
-        ElementHelper.selectFromDropDownByText(driver,yearsDropDown,Global.birthYear);
+        ElementHelper.selectFromDropDownByText(driver,yearsDropDown,global.getBirthYear());
         return this;
     }
     public SignupPage enterFirstName(){
-        ElementHelper.type(driver,f_Name,Global.firstName);
+        ElementHelper.type(driver,f_Name,global.getFirstName());
         return this;
     }
     public SignupPage enterLastName(){
-        ElementHelper.type(driver,l_Name,Global.lastName);
+        ElementHelper.type(driver,l_Name,global.getLastName());
         return this;
     }
     public SignupPage enterAddress(){
-        ElementHelper.type(driver,this.address,Global.address);
+        ElementHelper.type(driver,this.address,global.getAddress());
         return this;
     }
     public SignupPage chooseCountry (String country){
@@ -84,19 +86,19 @@ public class SignupPage {
         return this;
     }
     public SignupPage enterCity(){
-        ElementHelper.type(driver,this.city,Global.city);
+        ElementHelper.type(driver,this.city,global.getCity());
         return this;
     }
     public SignupPage enterState(){
-        ElementHelper.type(driver,this.state,Global.state);
+        ElementHelper.type(driver,this.state,global.getState());
         return this;
     }
     public SignupPage enterZipCode(){
-        ElementHelper.type(driver,zipCode,Global.zipCode);
+        ElementHelper.type(driver,zipCode,global.getZipCode());
         return this;
     }
     public SignupPage enterMobileNumber(){
-        ElementHelper.type(driver,mobilePhone,Global.phoneNumber);
+        ElementHelper.type(driver,mobilePhone,global.getPhoneNumber());
         return this;
     }
     public void clickOnCreateAccountBtn(){

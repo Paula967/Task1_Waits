@@ -1,3 +1,6 @@
+package DriverManager;
+
+import config.LoadProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,8 +15,8 @@ import java.time.Duration;
 public class DriverManager {
 
     static WebDriver driver;
-    static String BrowserName="chrome";
-    static String  URL="https://automationexercise.com/";
+    static String BrowserName= LoadProperties.BROWSER;
+    static String URL=LoadProperties.URL;
 
     public static void driverSetup(){
         switch (BrowserName.toLowerCase())
@@ -51,7 +54,10 @@ public class DriverManager {
         return driver;
     }
     static public void closeDriver(){
-        driver.quit();
-    }
-
+        if (driver != null) {
+            System.out.println("Closing WebDriver...");
+            driver.quit();
+            driver = null;
+        }
+}
 }

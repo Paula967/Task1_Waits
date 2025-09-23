@@ -1,3 +1,4 @@
+import DriverManager.DriverManager;
 import Pages.HomePage;
 
 import Pages.SigninPage;
@@ -11,8 +12,8 @@ public class SignInTest extends BaseTest{
 
     @BeforeClass
     public void setUp(){
-        Home=new HomePage(DriverManager.getDriver());
-        signinPage=new SigninPage(DriverManager.getDriver());
+        Home=new HomePage();
+        signinPage=new SigninPage();
     }
 
     @Test

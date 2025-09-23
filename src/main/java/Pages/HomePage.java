@@ -3,6 +3,8 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import DriverManager.DriverManager;
+
 public class HomePage {
 
     //Variables
@@ -12,8 +14,8 @@ public class HomePage {
      private final By signInUpBtn=By.linkText("Signup / Login");
 
     //Constructor
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
+    public HomePage() {
+        this.driver = DriverManager.getDriver();
     }
 
     //Actions

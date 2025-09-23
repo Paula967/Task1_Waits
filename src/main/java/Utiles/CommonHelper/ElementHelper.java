@@ -31,7 +31,6 @@ public class ElementHelper {
     }
     public static void type(WebDriver driver,By locator, String text){
         WebElement element=waitForVisibility(driver,locator);
-        element.clear();
         element.sendKeys(text);
     }
     public static String getText(WebDriver driver,By locator){

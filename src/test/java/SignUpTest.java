@@ -1,3 +1,4 @@
+import DriverManager.DriverManager;
 import Pages.HomePage;
 import Pages.SignupPage;
 import org.testng.annotations.BeforeClass;
@@ -10,13 +11,13 @@ public class SignUpTest extends BaseTest{
 
     @BeforeClass
     public void setup(){
-        Home= new HomePage(DriverManager.getDriver());
-        signupPage=new SignupPage(DriverManager.getDriver());
+        Home= new HomePage();
+        signupPage=new SignupPage();
     }
     @Test(testName = "Signup", groups = "regression",priority =1)
     public  void signupHappyPathFlow (){
         Home.clickOnSignInUpButton();
-        signupPage.enterName().EnterEmail()
+        signupPage.EnterEmail()
                 .clickOnSignupBtn().chooseGender()
                 .enterPassword().chooseDay()
                 .chooseMonth().chooseYear()
