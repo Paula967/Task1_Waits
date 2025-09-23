@@ -1,6 +1,7 @@
 package Pages;
 
 import Utiles.CommonHelper.ElementHelper;
+import Utiles.CommonHelper.Global;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -34,12 +35,12 @@ public class SignupPage {
         this.driver = driver;
     }
 
-    public SignupPage enterName(String name){
-        ElementHelper.type(driver,Name,name);
+    public SignupPage enterName(){
+        ElementHelper.type(driver,Name, Global.fullName);
         return  this;
     }
-    public SignupPage EnterEmail(String email){
-        ElementHelper.type(driver,registerEmail,email);
+    public SignupPage EnterEmail(){
+        ElementHelper.type(driver,registerEmail,Global.email);
         return  this;
     }
     public SignupPage clickOnSignupBtn (){
@@ -50,52 +51,52 @@ public class SignupPage {
         ElementHelper.clickOnElement(driver,mrGender);
         return this;
     }
-    public SignupPage enterPassword(String pass){
-        ElementHelper.type(driver,password,pass);
+    public SignupPage enterPassword(){
+        ElementHelper.type(driver,password,Global.password);
         return this;
     }
-    public  SignupPage chooseDay(String day){
-        ElementHelper.selectFromDropDownByText(driver,daysDropDown,day);
+    public  SignupPage chooseDay(){
+        ElementHelper.selectFromDropDownByText(driver,daysDropDown,Global.birthDay);
         return this;
     }
-    public  SignupPage chooseMonth(String month){
-        ElementHelper.selectFromDropDownByText(driver,monthsDropDown,month);
+    public  SignupPage chooseMonth(){
+        ElementHelper.selectFromDropDownByText(driver,monthsDropDown,Global.birthMonth);
         return this;
     }
-    public  SignupPage chooseYear (String year){
-        ElementHelper.selectFromDropDownByText(driver,yearsDropDown,year);
+    public  SignupPage chooseYear(){
+        ElementHelper.selectFromDropDownByText(driver,yearsDropDown,Global.birthYear);
         return this;
     }
-    public  SignupPage enterFirstName  (String name){
-        ElementHelper.type(driver,f_Name,name);
+    public SignupPage enterFirstName(){
+        ElementHelper.type(driver,f_Name,Global.firstName);
         return this;
     }
-    public  SignupPage enterLastName  (String name){
-        ElementHelper.type(driver,l_Name,name);
+    public SignupPage enterLastName(){
+        ElementHelper.type(driver,l_Name,Global.lastName);
         return this;
     }
-    public  SignupPage  enterAddress (String address){
-        ElementHelper.type(driver,this.address,address);
+    public SignupPage enterAddress(){
+        ElementHelper.type(driver,this.address,Global.address);
         return this;
     }
-    public  SignupPage  chooseCountry ( String country){
+    public SignupPage chooseCountry (String country){
         ElementHelper.selectFromDropDownByText(driver,countryDropDown,country);
         return this;
     }
-    public  SignupPage enterCity  ( String city){
-        ElementHelper.type(driver,this.city,city);
+    public SignupPage enterCity(){
+        ElementHelper.type(driver,this.city,Global.city);
         return this;
     }
-    public  SignupPage enterState  (String state){
-        ElementHelper.type(driver,this.state,state);
+    public SignupPage enterState(){
+        ElementHelper.type(driver,this.state,Global.state);
         return this;
     }
-    public  SignupPage enterZipCode (String code){
-        ElementHelper.type(driver,zipCode,code);
+    public SignupPage enterZipCode(){
+        ElementHelper.type(driver,zipCode,Global.zipCode);
         return this;
     }
-    public  SignupPage  enterMobileNumber( String number){
-        ElementHelper.type(driver,mobilePhone,number);
+    public SignupPage enterMobileNumber(){
+        ElementHelper.type(driver,mobilePhone,Global.phoneNumber);
         return this;
     }
     public  SignupPage clickOnCreateAccountBtn(){
