@@ -99,9 +99,8 @@ public class SignupPage {
         ElementHelper.type(driver,mobilePhone,Global.phoneNumber);
         return this;
     }
-    public  SignupPage clickOnCreateAccountBtn(){
+    public void clickOnCreateAccountBtn(){
         ElementHelper.clickOnElement(driver,createAccountBtn);
-        return this;
     }
 
 }
